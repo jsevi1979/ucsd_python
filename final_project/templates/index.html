@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% load static %}
+<img src="{% static '/san_diego.jpg' %}" alt="My image" height="300px" width="700px"/>
+
+<script src="{% static '/js/script.js' %}" type="text/javascript"></script>
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<h1>Name : {{ name }}</h1>
+<h2>Domain : {{ website.domain }}</h2>
+<h3>Number of Views : {{ website.no_of_views }}</h3>
+<h4>Address : {{ Address }}</h4>
+
+<a href="form">Add New</a><br>
+<a href="display">Display Data</a><br>
+<a href="introduction">Introduction</a><br>
+<a href="about">About</a><br>
+</body>
+</html>

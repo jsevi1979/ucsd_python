@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+</head>
+
+{% include 'base.html' %}
+{% csrf_token %}
+{% block content %}
+<body>
+    <h1>Users List</h1>
+
+{% if details %}
+    <p>Total Number of Records : {{ details | length }}</p>
+    {% for detail in details %}
+
+            <p>
+            Name : {{ detail.firstname|upper }} {{ detail.lastname|upper }}<br>
+            Email : {{ detail.email }}<br>
+            Username : {{ detail.username|lower }}<br>
+            </p>
+
+    {% endfor %}
+{% else %}
+    <h1> No Data Available</h1>
+{% endif %}
+<a href="form">Add New</a>
+{% endblock %}
+</body>
+</html>
